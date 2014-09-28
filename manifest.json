@@ -9,7 +9,7 @@
   "content_scripts": [
     {
       "js": [
-        "parseUrl.js",
+        "https://github.com/KTAtkinson/extractor-chrome/blob/master/parseUrl.js",
         "extractor_loader.js", 
         "extractor.js"
         ]
