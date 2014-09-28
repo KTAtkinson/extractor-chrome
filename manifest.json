@@ -7,9 +7,9 @@
   "description": "A utility for extracting data from links using user provided perameters.",
   
   "content_scripts": [
-    {
+    { "match": ["<all_urls>"],
       "js": [
-        "https://github.com/KTAtkinson/extractor-chrome/blob/master/parseUrl.js",
+        "matchUrl.js",
         "extractor_loader.js", 
         "extractor.js"
         ]
