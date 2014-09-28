@@ -3,7 +3,6 @@
   "name": "extractor",
   "version": "0.1",
 
-  "default_locale": "en",
   "description": "A utility for extracting data from links using user provided perameters.",
   
   "content_scripts": [
