@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "extractor",
+  "version": "0.1-beta",
+
+  "default_locale": "en",
+  "description": "A utility for extracting data from links using user provided perameters.",
+  
+  "content_scripts": [
+    {
+      "js": [
+        "parseUrl.js",
+        "extractor_loader.js", 
+        "extractor.js"
+        ]
+    }
+  ],
+  "permissions": ["clipboard.Write", "contextMenus"]
+}
+
+
