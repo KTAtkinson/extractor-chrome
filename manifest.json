@@ -14,7 +14,7 @@
         ]
     }
   ],
-  "permissions": ["clipboard.Write", "contextMenus"]
+  "permissions": ["clipboardWrite", "contextMenus"]
 }
 
 
