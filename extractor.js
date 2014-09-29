@@ -2,7 +2,7 @@ function quaryOnClick(info, tab) {
   var extractor = findExtractorById(info.menuItemId);
   var parsed = parseUrl(info.linkUrl);
 
-  for each (var query in parsed.queries.split("&") {
+  for each (var query in parsed.queries.split("&")) {
     var query = query.split("=");
     if (query[0] in extractor.queries) {
       confirmCopy(query[1])
