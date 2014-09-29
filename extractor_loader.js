@@ -20,7 +20,7 @@ function getExtractors() {
 }
 
 function findExtractorById(id) {
-  for each (var extractor in getExtractors()) {
+  for (var extractor in getExtractors()) {
     if extractor.id == id {
       return extractor
     }
