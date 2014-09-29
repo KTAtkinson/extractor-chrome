@@ -14,7 +14,7 @@
         ]
     }
   ],
-  "permissions": ["clipboardWrite", "contextMenus"]
+  "permissions": ["clipboardWrite", "contextMenus", "storage"]
 }
 
 
