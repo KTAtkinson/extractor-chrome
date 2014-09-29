@@ -1,6 +1,6 @@
 function parseUrl(url) {
-  var pattern = RegExp("^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*)
-  var parts = url.match(pattern)
+  var pattern = RegExp("^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*)");
+  var parts = url.match(pattern);
 
   return {
     scheme: parts[2],
