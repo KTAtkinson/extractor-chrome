@@ -20,7 +20,7 @@ function confirmCopy(textToCopy) {
 }
 
 var extractors = getExtractors();
-base_extractor_context = ["link"];
+var base_extractor_context = ["link"];
 
 for (var extractor in extractors) {
   chrome.contextMenus.create({"id": extractor[id], "title"="Copy "+extractor.dataName, "contexts"=base_extractor_context, "onclick"=quaryOnClick)}
