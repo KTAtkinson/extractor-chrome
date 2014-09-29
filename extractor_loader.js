@@ -12,7 +12,7 @@ var DEFAULTS = {
 }
 
 function getOptions() {
-  return chrome.storage.sync.get(DEFAULTS, function(options) {})
+  return chrome.storage.sync.get(DEFAULTS, function(options) {return options})
 }
 
 function getExtractors() {
