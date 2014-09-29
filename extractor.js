@@ -9,12 +9,12 @@ function quaryOnClick(info, tab) {
     }
   }
 
-  alert("No {} was found in the URL provided.".format(extractor.dataName);
+  alert("No {} was found in the URL provided.".format(extractor.dataName));
   return null
 }
 
 function confirmCopy(textToCopy) {
-  if (prompt("Press enter or CTR+C to copy", textToCopy) {
+  if (prompt("Press enter or CTR+C to copy", textToCopy)) {
     window.execcommand("copy")
   }
 }
