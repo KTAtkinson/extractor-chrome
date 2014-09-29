@@ -1,14 +1,14 @@
 var DEFAULTS = {
-  extractors: [
+  "extractors": [
     {
-      name: "YouTube Video ID",
-      dataName: "YouTube Video ID",
-      queries: ["v", "video_id"],
-      id: "default",
-      isActive: true,
+      "name": "YouTube Video ID",
+      "dataName": "YouTube Video ID",
+      "queries": ["v", "video_id"],
+      "id": "default",
+      "isActive": true,
     }
   ],
-  isSet: false
+  "isSet": false
 }
 
 function getOptions() {
