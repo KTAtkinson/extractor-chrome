@@ -1,5 +1,5 @@
 var DEFAULTS = {
-  extractors: {
+  extractors: [
     {
       name: "YouTube Video ID",
       dataName: "YouTube Video ID",
@@ -7,7 +7,7 @@ var DEFAULTS = {
       id: "default",
       isActive: true,
     }
-  },
+  ],
   isSet: false
 }
 
