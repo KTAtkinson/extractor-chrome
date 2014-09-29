@@ -21,7 +21,7 @@ function getExtractors() {
 
 function findExtractorById(id) {
   for (var extractor in getExtractors()) {
-    if extractor.id == id {
+    if (extractor.id == id) {
       return extractor
     }
   }
