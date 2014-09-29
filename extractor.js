@@ -1,15 +1,15 @@
 function quaryOnClick(info, tab) {
-  var extractor = findExtractorById(info.menuItemId)
-  var parsed = parseUrl(info.linkUrl)
+  var extractor = findExtractorById(info.menuItemId);
+  var parsed = parseUrl(info.linkUrl);
 
   for each (var query in parsed.queries.split("&") {
-    var query = query.split("=")
+    var query = query.split("=");
     if (query[0] in extractor.queries) {
       confirmCopy(query[1])
     }
   }
 
-  alert("No {} was found in the URL provided.".format(extractor.dataName)
+  alert("No {} was found in the URL provided.".format(extractor.dataName);
   return null
 }
 
