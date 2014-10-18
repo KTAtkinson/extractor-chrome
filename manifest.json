@@ -8,7 +8,7 @@
     "background": {
       "persistent": true,
       "scripts": [
-          "third_party/q-1/q.js",
+          "third_party/q-js/q.js",
           "third_party/URI-js/URI.min.js",
           "common/extractor_loader.js",
           "common/messages.js",
