@@ -1,20 +1,27 @@
 {
-  "manifest_version": 2,
-  "name": "extractor",
-  "version": "0.1",
-
-  "description": "A utility for extracting data from links using user provided perameters.",
+    "manifest_version": 2,
+    "name": "extractor",
+    "version": "0.1",
   
-  "content_scripts": [
-    { "matches": ["<all_urls>"],
-      "js": [
-        "parseUrl.js",
-        "extractor_loader.js", 
-        "extractor.js"
-        ]
-    }
-  ],
-  "permissions": ["clipboardWrite", "contextMenus", "storage"]
-}
-
-
+    "description": "A utility for extracting data from links using user provided perameters.",
+    
+    "background": {
+      "persistent": true,
+      "scripts": [
+          "third_party/q-1/q.js",
+          "third_party/URI-js/URI.min.js",
+          "extractor_loader.js",
+          "messges.js",
+          "extractor.js"
+          ]
+      },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["messages.js", "content.js"]
+      }
+    ],
+    "permissions": ["clipboardWrite", "contextMenus", "storage", "tabs"]
+  }
+  
+  
