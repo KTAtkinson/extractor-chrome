@@ -11,21 +11,55 @@ var DEFAULTS = {
   isSet: false
 }
 
-function getOptions() {
-  return chrome.storage.sync.get(DEFAULTS, function(options) {return options})
+function loadOptions(callback) {
+  chrome.storage.sync.get(DEFAULTS, callback);
 }
 
-function getExtractors() {
-  return getOptions().extractors
+function loadObjectDeferred() {
+  console.log("Creating deferral...");
+  var d = Q.defer();
+  chrome.storage.sync.get(DEFAULTS, function(data) {
+    d.resolve(data);
+  });
+  console.log("Deferred call for options.");
+  return d.promise;
+}
+
+function loadExtractors(callback) {
+  loadOptions(function(data) {
+    var extractors = data.extractors;
+    callback(extractors);
+  });
+}
+
+function loadExtractorsDeferred() {
+  var d = Q.defer();
+  loadObjectDeferred().then(function(data) {
+    console.log("Options loaded: %s", data);
+    d.resolve(data.extractors);
+  });
+  return d.promise;
 }
 
 function findExtractorById(id) {
-  for (var extractor in getExtractors()) {
-    if (extractor.id == id) {
-      return extractor
+  d = Q.defer();
+  
+  loadExtractorsDeferred().then(function(extractors) {
+    console.log("Found extractors: %s", extractors[0].id);
+    for (var eindex in extractors) {
+      console.log(eindex);
+      var extractor = extractors[eindex];
+      console.log("Examining %s", extractor.id);
+      if (id == extractor.id) {
+        d.resolve(extractor);
+      }
+      return;
     }
-  }
-
-  return nil
+    console.log("Extractor %s not found.", id);
+    d.resolve();
+  });
+  
+  return d.promise;
 }
+
 
