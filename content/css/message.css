@@ -1,8 +1,8 @@
 .extractor-copy-notification {
   text-size: 1.5em;
   position: fixed;
-  z-index: -1;
-  width: 2147483647;
+  z-index: 2147483647;
+  width: 100%;
   padding: .75em;
   top: 0px;
   text-align: center;
