@@ -21,9 +21,9 @@
         "js": [
             "common/messages.js", 
             "content/js/content.js"
-            ]
+            ],
         "css": [
-            "content/message.css"
+            "content/css/message.css"
             ]
       }
     ],
