@@ -54,6 +54,7 @@ function onClick(info, tab) {
   request = getMessage(MESSAGE.notifyUser, {
   status: MESSAGE.status.error,
   cause: MESSAGE.cause.dataNotFound,
+  dataName: extractor.dataName,
   queryParams: extractor.queries,
   url: info.linkUrl,
   timeout: true
