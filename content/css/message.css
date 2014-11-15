@@ -1,0 +1,14 @@
+.extractor-copy-notification {
+  text-size: 1.5em;
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  padding: .75em;
+  top: 0px;
+  text-align: center;
+  color: #000000;
+  background-color: #6495ED;
+  }
+.extractor-copy-notification.alert-warn {
+  background-color: #FF4500;
+  }
