@@ -8,17 +8,23 @@
     "background": {
       "persistent": true,
       "scripts": [
-          "third_party/q-1/q.js",
+          "third_party/q-js/q.js",
           "third_party/URI-js/URI.min.js",
-          "extractor_loader.js",
-          "messages.js",
-          "extractor.js"
+          "common/extractor_loader.js",
+          "common/messages.js",
+          "background/js/extractor.js"
           ]
       },
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
-        "js": ["messages.js", "content.js"]
+        "js": [
+            "common/messages.js", 
+            "content/js/content.js"
+            ],
+        "css": [
+            "content/css/message.css"
+            ]
       }
     ],
     "permissions": ["clipboardWrite", "contextMenus", "storage", "tabs"]

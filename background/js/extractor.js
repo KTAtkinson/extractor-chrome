@@ -26,6 +26,7 @@ function onClick(info, tab) {
       console.log("User notified that query is being copied.");
       copyDataToClipboard(response.data.extractedData);
       response.data.status = MESSAGE.status.success;
+      response.data.timeout = true;
       var request = getMessage(MESSAGE.notifyUser, response.data);
       chrome.tabs.sendMessage(tab.id, request);
     } else {
@@ -43,7 +44,8 @@ function onClick(info, tab) {
           'dataName': extractor.dataName,
           'url': info.linkUrl,
           'queryParams': extractor.queries,
-          'extractedData': queries[query]
+          'extractedData': queries[query],
+          "timeout": false
           });
       chrome.tabs.sendMessage(tab.id, request, notifyUserCallback);
       return;
@@ -52,8 +54,10 @@ function onClick(info, tab) {
   request = getMessage(MESSAGE.notifyUser, {
   status: MESSAGE.status.error,
   cause: MESSAGE.cause.dataNotFound,
+  dataName: extractor.dataName,
   queryParams: extractor.queries,
-  url: info.linkUrl
+  url: info.linkUrl,
+  timeout: true
   });
   
   chrome.tabs.sendMessage(tab.id, request);

@@ -49,14 +49,20 @@ function notifyUser(message) {
     notification.class = cssClass;
     notification.textContent = displayMessage;
   }
+  
+  if (message.data.timeout === true) {
+    var remove = document.querySelector("." + baseClass);
+    setTimeout(function(){remove.parentNode.removeChild(remove)}, 2500);
+  }
 }
 
 function getClientError(error) {
-  request = getMessage(MESSAGE.logError, error.data);
+  var data = error.data
+  request = getMessage(MESSAGE.logError, error);
   chrome.runtime.sendMessage(request);
   
   if (error.data.cause == MESSAGE.cause.dataNotFound) {
-    return "Could not find %s in %s.".format(data.dataName, data.url);
+    return "Could not find " + data.dataName + " in " + data.url + ".";
   } else {
     console.log("Error was logged in background.");
     return "There was an unknown issue. It has been logged.";
