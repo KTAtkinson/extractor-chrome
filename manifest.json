@@ -22,6 +22,9 @@
             "common/messages.js", 
             "content/js/content.js"
             ]
+        "css": [
+            "content/message.css"
+            ]
       }
     ],
     "permissions": ["clipboardWrite", "contextMenus", "storage", "tabs"]
