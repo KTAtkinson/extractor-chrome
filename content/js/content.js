@@ -49,6 +49,10 @@ function notifyUser(message) {
     notification.class = cssClass;
     notification.textContent = displayMessage;
   }
+  
+  if (message.data.timeout === true) {
+    setTimeout(function(){notification.parentNode.removeChild(notification)}, 10000);
+  }
 }
 
 function getClientError(error) {
